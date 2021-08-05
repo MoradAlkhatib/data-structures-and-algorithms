@@ -110,12 +110,9 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
-  let array=arr.map(elem=>elem.price)
-
   function compare(a,b){return a.price-b.price}
   let newArray=arr.sort(compare);
-  
-return newArray;
+  return newArray; 
 
 
 };
@@ -123,13 +120,32 @@ return newArray;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named alphabetizeBetter that takes in an array of strings and returns the same array, with the strings sorted alphabetically. Capitalization should not change the sort order of two strings.
+Write a function named alphabetizeBetter that takes in an array of strings and returns the same array,
+ with the strings sorted alphabetically. Capitalization should not change the sort order of two strings.
 
-For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
+For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted,
+ and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  //A 65 Z 90  a97 z122
+  let l=[];
+  let s=[];
+  for(let i=0;i<arr.length;i++)
+  {
+        if (arr[i][0]>64 && arr[i][0]<91)
+       { 
+         l.push(arr[i][0]);
+         s.push(arr[i]);
+       }
+
+  }
+ let firstArr= updateAnimal(arr,lower)
+ let secondArr=firstArr.sort();
+ 
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
