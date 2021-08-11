@@ -178,6 +178,7 @@ const hasChildrenValues = (arr, character) => {
   return !bol;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
