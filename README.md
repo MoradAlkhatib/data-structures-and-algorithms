@@ -20,4 +20,7 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+Python table challenge
+File name | Link Page
+------------ | -------------
+Reverses | [Reverses code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/Reverse_an_Array/reverseArray.md)
