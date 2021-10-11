@@ -2,10 +2,7 @@
 def reverseArray(arr):
     # this function tack an array as input
 
-   x=0
-   # for over the loop to know how much element inside it
-   for i in arr:
-       x+=1
+   x=len(arr)
     # iteration over an array revers
    for i  in range(int(x/2)):  
         n = arr[i]
