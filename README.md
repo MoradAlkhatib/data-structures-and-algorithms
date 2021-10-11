@@ -24,3 +24,4 @@ Python table challenge
 File name | Link Page
 ------------ | -------------
 Reverses | [Reverses code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/Reverse_an_Array/reverseArray.md)
+array_insert_shift | [array_insert_shift code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/array_insert_shift/array_insert.md)
