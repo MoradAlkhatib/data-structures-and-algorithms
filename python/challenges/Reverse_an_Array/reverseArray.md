@@ -7,7 +7,9 @@
 
 
 ## Whiteboard Process
-![image](reverseArray.png)
+
+![image](arrayRevers.jpg)
+
 
 ## Approach & Efficiency
 I solved this problem by using for loop to iterated on the items inside the arr and make an mirror
