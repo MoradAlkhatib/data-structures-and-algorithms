@@ -1,16 +1,15 @@
 
 def binarySearch(arr, n): 
     start = 0
-    end = len(arr) - 1             
+    end = len(arr) - 1        
     mid = 0
   
     while start <= end: 
   
-        mid = (end + start) 
-  
+        mid = (end + start)//2  
         # Check if n is present at mid 
         if arr[mid] < n: 
-            start = mid + 1
+            start = mid + 1 
   
         # If n is greater, ignore left half 
         elif arr[mid] > n: 
