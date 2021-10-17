@@ -108,3 +108,17 @@ def test_toString():
     actul= ll.to_string()
 
     assert expected==actul
+
+
+def test_append():
+    
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(2)
+    ll.append(4)
+    
+   
+    expected= "{ 1 } -> { 2 } -> { 4 } -> NULL"
+    actul= ll.to_string()
+
+    assert expected==actul
