@@ -74,3 +74,17 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run every possible test** - `pytest`
 - **Run filtered tests** - `pytest -k some_filter_text`
 - **Run in watch mode** - `ptw` or `pytest-watch`
+
+
+
+
+Whiteboard for problem solving (function()to solve problem)
+Problem domain : here you can put what the problem and how you going to deal with it 
+Algorithm : write the how you will going to solve the problem but you must use the cleaning word to make it understand for all the people not just for the programmer 
+Input And Output : write what the function will take and what will out from it  
+Edge Cases : the case can your function deal with its
+pseudo code : write the function or method will solve the problem but make sure that be for the programmer but without choose any Language like make it understandable for all the programmer with dealing with any language 
+Code : here write your code which you going to write it with your language and write the name of the language you will use it 
+Verification : write what the verify in your method or function 
+Visual: draw how your method will work in the steps and make sure to be understandable 
+Efficiency: use big o notation to know how mush the method need time and space 
