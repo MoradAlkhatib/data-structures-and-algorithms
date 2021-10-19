@@ -1,5 +1,4 @@
 
-https://github.com/MoradAlkhatib/data-structures-and-algorithms/pull/23/
 # Singly Linked List
 Node
 Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -37,10 +36,15 @@ Returns: a string representing all the values in the Linked List, formatted as:
 append
 arguments: new value
 adds a new node with the given value to the end of the list
+whiteBoard :![append](append.jpg)
 insert before
 arguments: value, new value
 adds a new node with the given new value immediately before the first node that has the value specified
+whiteBoard :![insert_before](insert_before.jpg)
 insert after
 arguments: value, new value
 adds a new node with the given new value immediately after the first node that has the value specified
+whiteBoard :![insert_after](insert_after.jpg)
+
+
 

@@ -1,5 +1,8 @@
 
 # class Node have the value and pointer of the next node
+
+
+
 class Node:
   def __init__(self, value, next=None):
     self.value = value
@@ -47,71 +50,56 @@ class LinkedList:
         current = current.next
     return str
 
-  def append(self, value):
-    node = Node(value)
-    current = self.head
-    if current == None:
-      self.head = node
-      node.next = None
-
-    while current:
-      if current.next == None:
-        current.next = node
-        node.next = None
-        break
-      else:
-        current = current.next
+  def append(self, new_value):
+    # add and items to linked list in tha last postion
+    new_node = Node(new_value)
+    if self.head is None:
+      self.head = new_node
+      return
+ 
+    last = self.head
+    while last.next:
+      last = last.next
+    last.next = new_node
 
 
-# {1}->{2}->{3}->{4}->None # 8
-# {1}->{2}->{8}->{3}->{4}->None # 8,3
 
   def insert_before(self, target, new_value):
     """
     this function is tack two arg first for where you want to add the item before and second which item you need to add
     """
-    node1=Node(target)
-    if self.head is None:
-      self.head = node1
-      node1.next = Node(new_value)
-      return
-      
-    if target == self.head.value:
-      new_node = Node(new_value)
-      new_node.next = self.head
-      self.head = new_node
-      return
-    current = self.head
-    print(current.next)
-    while current.next is not None:
-      if current.next.value == target:
+    current=self.head
+    if self.head==None:
+      self.insert(new_value)
+    else:
+      while current:
+        if self.head.next.value==target:
+          data_after=current.next
+          current.next=Node(new_value)
+          current.next.next=data_after
+          break
+        current=current.next 
+   
+ 
+ 
+  def insert_after(self,value,new_data):
+    """
+    this function is tack two arg first for where you want to add the item After and second which item you need to add
+    """
+    current=self.head
+    while current:
+      if current.value==value:
+        next_data=current.next
+        current.next=Node(new_data)
+        Node(new_data).next=next_data
         break
-      current = current.next
-      if current.next is None:
-          print("item not in the list")
-      else:
-        new_node = Node(new_value)
-        new_node.next = current.next
-        current.next = new_node
+      current=current.next    
+  
+
  
+
+
+  
  
-     
 
 
-# def insert_after(self,target,new_value):
-#     """
-#     this function is tack two arg first for where you want to add the item After and second which item you need to add
-#     """
-#     current = self.head
-#     while current is not None:
-#         if current.value == target:
-#             break
-#     current = current.next
-#     if current is None:
-#         print("item not in the list")
-#     else:
-#         new_node = Node(new_value)
-#         new_node.next = current.next
-#         current.next = new_node
-
-    
