@@ -95,7 +95,30 @@ class LinkedList:
         break
       current=current.next    
   
+  def kthFromEnd(self,k):
+    # function that find the element inside the linked list from the a last 
+    if k<0 :
+      return "Exception"
+    current=self.head
+    count=0
+    counter=0
 
+    while current:
+      if current.next == None:
+        counter =count-k
+        if counter<0:
+          return "Exception"
+        break
+      current=current.next
+      count+=1
+
+    count=0
+    current=self.head
+    while current:
+      if count == counter:
+        return current.value      
+      count+=1 
+      current=current.next
  
 
 
