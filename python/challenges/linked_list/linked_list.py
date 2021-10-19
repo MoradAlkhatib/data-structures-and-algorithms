@@ -121,8 +121,34 @@ class LinkedList:
       current=current.next
  
 
+def zipLists(list1,list2):
+  #this function is tack a two linked lists and return zip for its
+  head_list1=list1.head
+  head_list2=list2.head
+  if (not head_list1) and (not head_list2):
+    return "the two lists is empty"
+  elif not head_list1:
+    return list2.to_string()
+  elif not head_list2:
+    return list1.to_string()
+  else:
+    temp='' 
+    while head_list1 and head_list2 : 
+      if head_list2 : 
+        temp =head_list1.next 
+        head_list1.next=head_list2
+        head_list1=temp 
+      
+      if head_list1 :
+        temp =head_list2.next 
+        head_list2.next=head_list1
+        head_list2=temp
 
-  
+    return list1.to_string()
+
+
+
+
  
 
 
