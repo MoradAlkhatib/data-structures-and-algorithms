@@ -122,3 +122,92 @@ def test_append():
     actul= ll.to_string()
 
     assert expected==actul
+
+def test_insert_before():
+  ll=LinkedList()
+  ll.append(3)
+  ll.append(4)
+  ll.insert_before(4,8)
+  #output
+  expected= "{ 3 } -> { 8 } -> { 4 } -> NULL"
+  actual=ll.to_string()
+  assert expected==actual
+
+def test_insert_after():
+  ll=LinkedList()
+  ll.append(3)
+  ll.append(4)
+  #output
+  ll.insert_after(4,8)
+  expected= "{ 3 } -> { 4 } -> { 8 } -> NULL"
+  actual=ll.to_string()
+  assert expected==actual
+
+
+def test_kthFromEnd():
+  # where k is not at the end, but somewhere in the middle of the linked list
+  ll=LinkedList()
+  ll.append(1)
+  ll.append(3)
+  ll.append(8)
+  ll.append(2) 
+  #output
+  
+  expected=3
+  actual=ll.kthFromEnd(2)
+  assert expected==actual
+
+def test_kthFromEnd1():
+  # Where k is not a positive integer
+  ll=LinkedList()
+  ll.append(1)
+  ll.append(3)
+  ll.append(8)
+  ll.append(2) 
+  #output
+  
+  expected="Exception"
+  actual=ll.kthFromEnd(-1)
+  assert expected==actual
+
+
+
+def test_kthFromEnd2():
+  # Where k is greater than the length of the linked list
+  ll=LinkedList()
+  ll.append(1)
+  ll.append(3)
+  ll.append(8)
+  ll.append(2) 
+  #output
+  
+  expected="Exception"
+  actual=ll.kthFromEnd(6)
+  assert expected==actual
+
+
+def test_kthFromEnd3():
+  # Where k and the length of the list are the same
+  ll=LinkedList()
+  ll.append(1)
+  ll.append(3)
+  ll.append(8)
+  ll.append(2) 
+  #output
+  
+  expected=1
+  actual=ll.kthFromEnd(3)
+  assert expected==actual
+
+def test_kthFromEnd4():
+  # Where the linked list is of a size 1
+  ll=LinkedList()
+  ll.append(1) 
+  #output
+  
+  expected=1
+  actual=ll.kthFromEnd(0)
+  assert expected==actual
+
+
+ 

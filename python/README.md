@@ -87,4 +87,6 @@ pseudo code : write the function or method will solve the problem but make sure 
 Code : here write your code which you going to write it with your language and write the name of the language you will use it 
 Verification : write what the verify in your method or function 
 Visual: draw how your method will work in the steps and make sure to be understandable 
-Efficiency: use big o notation to know how mush the method need time and space 
+Efficiency: use big o notation to know how mush the method need time and space
+
+
