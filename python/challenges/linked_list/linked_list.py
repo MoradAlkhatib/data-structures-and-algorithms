@@ -148,20 +148,7 @@ def zipLists(list1,list2):
 
 
 
-def main():
-  l=LinkedList()
-  l2=LinkedList()
-  l.append(2)
-  l.append(3)
-  l.append(4)
-  
-  l2.append(5)
-  l2.append(6)
-  l2.append(7)
-  l2.append(10)
-  print(zipLists(l,l2))
 
-if __name__ =="__main__":main()
  
 
 

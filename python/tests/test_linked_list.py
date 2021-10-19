@@ -1,4 +1,4 @@
-from challenges.linked_list.linked_list import (LinkedList,Node)
+from challenges.linked_list.linked_list import (LinkedList,Node,zipLists)
 
 
 
@@ -209,5 +209,68 @@ def test_kthFromEnd4():
   actual=ll.kthFromEnd(0)
   assert expected==actual
 
+def test_zipLists1():
+  l=LinkedList()
+  l2=LinkedList()
+  assert zipLists(l,l2)=="the two lists is empty"
 
- 
+def test_zipLists2():
+  l=LinkedList()
+  l2=LinkedList()
+  l.append(2)
+  l.append(3)
+  l.append(4)
+  assert zipLists(l,l2)=='{ 2 } -> { 3 } -> { 4 } -> NULL'
+
+def test_zipLists3():
+  l=LinkedList()
+  l2=LinkedList()
+  l2.append(2)
+  l2.append(3)
+  l2.append(4)
+  assert zipLists(l,l2)=='{ 2 } -> { 3 } -> { 4 } -> NULL'
+
+
+
+def test_zipLists4():
+  l=LinkedList()
+  l2=LinkedList()
+  l.append(2)
+  l.append(3)
+  l.append(4)
+  
+  l2.append(5)
+  l2.append(6)
+  l2.append(7)
+  excepted='{ 2 } -> { 5 } -> { 3 } -> { 6 } -> { 4 } -> { 7 } -> NULL'
+  assert excepted==zipLists(l,l2)
+
+def test_zipLists4():
+  l=LinkedList()
+  l2=LinkedList()
+  l.append(2)
+  l.append(3)
+  l.append(4)
+  l.append(9)
+  
+  l2.append(5)
+  l2.append(6)
+  l2.append(7)
+  
+  excepted='{ 2 } -> { 5 } -> { 3 } -> { 6 } -> { 4 } -> { 7 } -> { 9 } -> NULL' 
+  assert excepted==zipLists(l,l2)
+
+
+def test_zipLists4():
+  l=LinkedList()
+  l2=LinkedList()
+  l.append(2)
+  l.append(3)
+  l.append(4)
+  
+  l2.append(5)
+  l2.append(6)
+  l2.append(7)
+  l2.append(10)
+  excepted='{ 2 } -> { 5 } -> { 3 } -> { 6 } -> { 4 } -> { 7 } -> { 10 } -> NULL'
+  assert excepted==zipLists(l,l2)
