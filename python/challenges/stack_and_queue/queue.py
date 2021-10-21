@@ -30,7 +30,7 @@ class Queue:
     def DeQueue(self):
          
         if self.isEmpty():
-            return
+            return "Queue is empty"
         temp = self.front
         self.front = temp.next
  
@@ -39,7 +39,7 @@ class Queue:
 
     def peek(self):
         if self.isEmpty():
-            return None
+            return "Queue is empty"
         else:
             return self.front.item
 

@@ -22,7 +22,7 @@ class Stack:
     # Method to remove an item from stack
     def pop(self):
         if not self.top:
-            return None
+            return "Stack is empty"
         else:
             temp = self.top
             self.top = temp.next
@@ -31,7 +31,7 @@ class Stack:
 
     def peek(self):
         if self.isempty():
-            return None
+            return "Stack is empty"
         else:
             return self.top.item
 
