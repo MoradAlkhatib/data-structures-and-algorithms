@@ -26,10 +26,8 @@ File name | Link Page
 Reverses | [Reverses code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/Reverse_an_Array/reverseArray.md)
 array_insert_shift | [array_insert_shift code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/array_insert_shift/array_insert.md)
 array_binary_search | [array_binary_search code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/array_binary_search/array_binary_search.md)
-
-Linked-List | [Linked-List code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/linked_list/linked_list.md
-)
-
+Linked-List | [Linked-List code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/linked_list/linked_list.md)
+Stack and Queue | [Stack and Queue code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/stack_and_queue/README.md)
 
 
 
