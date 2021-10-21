@@ -146,9 +146,102 @@ def zipLists(list1,list2):
 
     return list1.to_string()
 
+def revers(self):
+      prev=None
+      current=self.head
+      while  current is not None:
+        next=current.next
+        current.next=prev
+        prev = current
+        current = next
+      self.head=prev
 
+def is_palindrome(lenked_list):
+  current=lenked_list.head
+  new_linked=LinkedList()
+  while current:
+    new_linked.append(current.value)
+    if current.next == None:
+      break
+    current=current.next
+  
+  revers(new_linked)
+  
+
+  if lenked_list.to_string() == new_linked.to_string():
+    return True
+  else :
+    return False
+  
+
+  
+
+
+def main():
+  link=LinkedList()
+  link.append('a')
+  link.append('b')
+  link.append('c')
+  link.append('c')
+  link.append('b')
+  link.append('a')
+
+  print(is_palindrome(link))
+
+
+
+
+if __name__ == '__main__':main()
+
+
+#[t]->[a]->[c]->[o]->[c]->[a]->[t]
+# def palindrome_linked_list(lenked_list):
+#   current=lenked_list.head
+#   counter=0
+#   first_middel_string=''
+#   last_middel_string=''
+#   while current:
+#     counter+=1
+#     first_middel_string+=current.value
+#     last_middel_string+=current.value
+
+
+#     current=current.next
+#   return first_middel_string
+
+
+# def checkPalindrome(left, right):
+    
+#     # base case
+#     if right is None:
+#       return True, left
+ 
+#     val, left = checkPalindrome(left, right.next)
+#     result = val and (left.value == right.value)
+#     left = left.next
+ 
+#     return result, left
+ 
+ 
+# Function to check if the linked list is a palindrome or not
+# def checkPlain(head):
+#     return checkPalindrome(head, head)[0]
 
 
  
+    # # input keys
+    # keys = [1, 3, 5, 3, 1]
+ 
+    # head = None
+    # for i in reversed(range(len(keys))):
+    #     head = Node(keys[i], head)
+ 
+    # if checkPlain(head):
+    #     print('The linked list is a palindrome')
+    # else:
+    #     print('The linked list is not a palindrome')
+
+
+  
 
 
