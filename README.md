@@ -28,6 +28,10 @@ array_insert_shift | [array_insert_shift code](/home/muradalkhatib/python/data-s
 array_binary_search | [array_binary_search code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/array_binary_search/array_binary_search.md)
 Linked-List | [Linked-List code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/linked_list/linked_list.md)
 Stack and Queue | [Stack and Queue code](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/stack_and_queue/README.md)
+PseudoQueue | [PseudoQueue](/home/muradalkhatib/python/data-structures-and-algorithms/python/challenges/pseudo_queue/README.md)
+
+
+
 
 
 
