@@ -25,9 +25,13 @@ class AnimalShelter():
          because it find how want to tack care of this animal.
         """
         if pref == "cat":
+          cat=self.cat.front.item
           self.cat.dequeue()
+          return cat
         elif pref == "dog":
+          dog=self.dog.front.item
           self.dog.dequeue()
+          return dog
         else:
           return "null"
 
