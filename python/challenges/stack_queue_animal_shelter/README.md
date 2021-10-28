@@ -7,10 +7,14 @@ use Queue to Animal Shelter and add to it just cat or dog object
 
 ## Approach & Efficiency
 
-enqueue
+enqueue add animal can be either a dog or a cat object.
 space O(1)
 time O(1)
-dequeue
+dequeue 
+Arguments: pref
+pref can be either "dog" or "cat"
+Return: either a dog or a cat, based on preference.
+If pref is not "dog" or "cat" then return null.
 space O(1)
 time O(1)
 
