@@ -1,32 +1,141 @@
-from challenges.trees.binary_tree import BinarySearch ,BinaryTree
+from challenges.trees.binary_tree import BinaryTree,Node ,BinarySearch
+
+import pytest
 
 
-# Can successfully instantiate an empty tree
-def test_tree():
-    tree=BinaryTree()
-    assert tree.data == None
+@pytest.fixture
 
-# Can successfully instantiate a tree with a single root node
-def test_tree_single_root():
-    tree=BinaryTree(5)
-    assert tree.data == 5
+def tree():
+  # Create tree instance
+  tree = BinaryTree()
 
-# Can successfully add a left child and right child to a single root node
+  # Create Nodes for 1,2,3,4
+  a_node = Node('a')
+  b_node = Node('b')
+  c_node = Node('c')
+  d_node = Node('d')
+  a_node.left = b_node
+  a_node.right = c_node
+  b_node.left = d_node
 
-def test_tree_add_left():
-    tree=BinaryTree(5)
-    tree.left==3
-    assert tree.left == 3
-
-def test_tree_add_right():
-    tree=BinaryTree(5)
-    assert tree.data == 5
-
-# Can successfully return a collection from a preorder traversal
+  # Add Root node to tree
+  tree.root=a_node 
+  return tree
 
 
+def test_pre_order(tree):
+  # set expected list
+  expected = ["a", "b", "d", "c"]
+  # set actual to return value of post_order call
+  actual = tree.pre_order()
+  # assert actual is same as expected
+  assert actual == expected
+  print("test_post_order_ passed")
 
-# Can successfully return a collection from an inorder traversal
+def test_in_order(tree):
+  # set expected list
+  expected = ["d", "b", "a", "c"]
+  # set actual to return value of post_order call
+  actual = tree.in_order()
+  # assert actual is same as expected
+  assert actual == expected
+  print("test_post_order_ passed")  
+
+def test_post_order(tree):
+  # set expected list
+  expected = ["d", "b", "c", "a"]
+  # set actual to return value of post_order call
+  actual = tree.post_order()
+  # assert actual is same as expected
+  assert actual == expected
+  print("test_post_order_ passed")  
+
+# ******************** binary search tree tests **********************
+@pytest.fixture
+
+def binary_tree():
+  # Arrange
+  # Create tree instance
+  binary_tree = BinarySearch()
+
+  # Create Nodes for A,B,C,D
+  a_node = Node('A')
+  b_node = Node('B')
+  c_node = Node('C')
+  d_node = Node('D')
+  a_node.left = b_node
+  a_node.right = c_node
+  b_node.left = d_node
+
+  # Add Root node to tree
+  binary_tree.root=a_node 
+  return binary_tree
 
 
-# Can successfully return a collection from a postorder traversal
+def test_bfs(binary_tree):
+  # set expected list
+  expected = ["A", "B", "C", "D"]
+  # set actual to return value of bfs call
+  actual = binary_tree.bfs()
+  # assert actual is same as expected
+  assert actual == expected
+  print("test_bfs passed")
+
+
+
+def test_add_once():
+     # Arrange
+    # Create tree instance
+    tree = BinarySearch()
+    # add "A" to the tree
+    tree.add('A')
+    # set expected list
+    expected = "A"
+    # set actual to the tree root value
+    actual = tree.root.value
+    # assert actual is same as expected
+    assert actual == expected
+
+def test_add_twice():
+    # Arrange
+    # Create tree instance
+    tree = BinarySearch()
+    # add "A" to the tree
+    tree.add("A")
+    tree.add("B")
+    # set expected list
+    expected = ["A","B"]
+    # set actual to the tree root value
+    actual = tree.pre_order()
+    # assert actual is same as expected
+    assert actual == expected
+
+def test_contains_value():
+    # Arrange
+    # Create tree instance
+    tree = BinarySearch()
+    # add "A" to the tree
+    tree.add("A")
+    tree.add("B")
+    tree.add("C")
+    # set expected list
+    expected = True
+    # set actual to the tree root value
+    actual = tree.__contains__("B")
+    # assert actual is same as expected
+    assert actual == expected
+
+def test_not_contains_value():
+   # Arrange
+    # Create tree instance
+    tree = BinarySearch()
+    # add "A" to the tree
+    tree.add("A")
+    tree.add("B")
+    tree.add("C")
+    # set expected list
+    expected = False
+    # set actual to the tree root value
+    actual = tree.__contains__("E")
+    # assert actual is same as expected
+    assert actual == expected

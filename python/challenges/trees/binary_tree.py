@@ -95,7 +95,7 @@ class BinarySearch(BinaryTree):
      list_of_items = []
      while breadth.peek():
         front=breadth.dequeue()
-        list_of_items+=[front.data]
+        list_of_items+=[front.value]
         if front.left:
             breadth.enqueue(front.left)
         if front.right:
@@ -113,7 +113,7 @@ class BinarySearch(BinaryTree):
         else :
             temp = self.root
             while temp:
-                if value < temp.data:
+                if value < temp.value:
                     if not temp.left:
                         temp.left = Node(value)
                         break
@@ -137,9 +137,9 @@ class BinarySearch(BinaryTree):
         else:
             temp = self.root
             while temp:
-                if temp.data == value:
+                if temp.value == value:
                     return True
-                elif temp.data > value:
+                elif temp.value > value:
                     if not temp.left:
                         return False
                     temp = temp.left
