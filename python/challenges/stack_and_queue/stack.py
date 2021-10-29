@@ -1,3 +1,6 @@
+
+
+
 class Node:
     def __init__(self,item,next=None) :
          self.item=item
@@ -35,6 +38,21 @@ class Stack:
         else:
             return self.top.item
 
+    def max_stack(self):
+        max_s=0
+        current=self.top
+        while current:        
+            if current.item > max_s:
+                max_s=current.item
+            
+            current=current.next
+        return max_s
+
+
+
+
+
+
 
 
     # def to_string(self):
@@ -54,10 +72,10 @@ class Stack:
 
 
 
-if __name__=='__main__':
-    stack=Stack()
-    stack.push(5)
-    stack.push(5)
-    stack.push(5)
-    stack.push(5)
-    print(stack.top.item)
+# if __name__=='__main__':
+#     stack=Stack()
+#     stack.push(5)
+#     stack.push(5)
+#     stack.push(5)
+#     stack.push(5)
+#     print(stack.top.item)

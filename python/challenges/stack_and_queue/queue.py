@@ -43,15 +43,51 @@ class Queue:
         else:
             return self.front.item
 
-if __name__== '__main__':
-    q = Queue()
-    q.EnQueue(10)
-    q.EnQueue(20)
-    q.DeQueue()
-    q.DeQueue()
-    q.EnQueue(30)
-    q.EnQueue(40)
-    q.EnQueue(50)
-    q.DeQueue()  
-    print("Queue Front " + str(q.front.item))
-    print("Queue Rear " + str(q.rear.item))
+
+def DuckDuckGoose():
+    pass
+
+
+
+
+
+
+
+
+
+
+
+def main():
+    pass   
+    
+
+if __name__=="__main__":main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# if __name__== '__main__':
+#     q = Queue()
+#     q.EnQueue(10)
+#     q.EnQueue(20)
+#     q.DeQueue()
+#     q.DeQueue()
+#     q.EnQueue(30)
+#     q.EnQueue(40)
+#     q.EnQueue(50)
+#     q.DeQueue()  
+#     print("Queue Front " + str(q.front.item))
+#     print("Queue Rear " + str(q.rear.item))
