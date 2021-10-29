@@ -1,132 +1,192 @@
-
-
-"""
-define a Node class that have a data, a left side and right side in the tree
-"""
 class Node:
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
+    def __init__(self,value):
+        self.value=value
+        self.left=None
+        self.right=None
+   
 
-"""
-define a BinaryTree class to make a binary tree  
-"""
 class BinaryTree:
-    def __init__(self, data=None):
-        node=Node(data)
-        self.data = node.data
-        self.left = node.left
-        self.right = node.right
-    
-    
-    
+    def __init__(self):
+        self.root=None
+
     def pre_order(self):
         """
         print the tree in the array with use depth way as a pre order.
         """
-        ele = []
+        arr=[]
+        def rec(node):
+            if node:
+                arr.append(node.value)
+                if node.left:
+                    rec(node.left)
+                if node.right:
+                    rec(node.right)
+        rec(self.root)
 
-        ele.append(self.data)
-        if self.left:
-            ele += self.left.pre_order()
-        
-        if self.right:
-            ele += self.right.pre_order()
-        
-        return ele
+        return arr
+
 
     def in_order(self):
         """
         print the tree in the array with use depth way as a In order.
         """
-        ele = []
-        
-        if self.left:
-            ele += self.left.in_order()
-        ele.append(self.data)
-        
-        if self.right:
-            ele += self.right.in_order()
-        
-        return ele
+        arr=[]
+        def rec(node):
+            if node:               
+                if node.left:
+                    rec(node.left)
+                arr.append(node.value)
+                if node.right:
+                    rec(node.right)
+        rec(self.root)
+
+        return arr
 
     def post_order(self):
         """
         print the tree in the array with use depth way as a post order.
         """
-        ele = []
-        
-        if self.left:
-            ele += self.left.post_order()
-                
-        if self.right:
-            ele += self.right.post_order()
+        arr=[]
+        def rec(node):
+            if node:               
+                if node.left:
+                    rec(node.left)
+                if node.right:
+                    rec(node.right)
+                arr.append(node.value)
+        rec(self.root)
 
-        ele.append(self.data)
-        return ele
-     
+        return arr
+
+
+
+class Queue:
+  """
+  Queue Class
+  """
+  def __init__(self, collection=[]):
+    self.data = collection
+
+  def peek(self):
+    if len(self.data):
+      return True
+    return False
+
+  def enqueue(self,item):
+    self.data.append(item)
+
+  def dequeue(self):
+    return self.data.pop(0)
+
 
 
 
 class BinarySearch(BinaryTree):
-
-    def __init__(self, data):
-        super().__init__(data)
-
-    def addChild(self, data):
-        """
-        this function is add the number in the tree and make the small
-        numbers in the left side and the bigger number in the right side.  
-        """
-        if data == self.data:
-            return
-        if data < self.data:
-            if self.left:
-                self.left.addChild(data)
-            else:
-                self.left = BinarySearch(data)
-        else:
-            if self.right:
-                self.right.addChild(data)
-            else:
-                self.right = BinarySearch(data)
-
-
-    def contains(self, data):
-        """
-        this function is check if the tree have this element or no and return true if it found or false if not
-        """
-
-        if data == self.data:
-            return True
-        if data < self.data:
-            if self.left:
-                if self.left.data==data:
-                    return True
-            else:
-                return False
-        else:
-            if self.right:
-                if self.left.data==data:
-                    return True
-            else:
-                return False
     
-def build(element):
+    def bfs(self):
+     """
+     A binary tree method which returns a list of items that it contains
+     input: None
+     output: tree items
     """
-    this function is use array to make a tree
-    """
-    root = BinarySearch(element[0])
-    for i in range(1,len(element)):
-        root.addChild(element[i])
-    return root  
+     breadth = Queue()
+     breadth.enqueue(self.root)
 
-
-if __name__ == '__main__':
-    element = [32, 89, 12, 94, 23, 61, 2]
-    tree = build(element)
+     list_of_items = []
+     while breadth.peek():
+        front=breadth.dequeue()
+        list_of_items+=[front.data]
+        if front.left:
+            breadth.enqueue(front.left)
+        if front.right:
+            breadth.enqueue(front.right)
+     return list_of_items
     
-    print(tree.in_order())
-    print(tree.pre_order())
-    print(tree.post_order())
+
+    def add(self,value):
+        """
+        this function is add the item in the tree and make the small
+        numbers in the left side and the bigger item in the right side.  
+        """
+        if not self.root:
+            self.root= Node(value)
+        else :
+            temp = self.root
+            while temp:
+                if value < temp.data:
+                    if not temp.left:
+                        temp.left = Node(value)
+                        break
+                    temp = temp.left
+                else:
+                    if not temp.right:
+                        temp.right = Node(value)
+                        break
+                    temp = temp.right
+        pass
+
+    def __contains__(self,value):
+        """
+        search for a value in the tree
+        input : value
+        output : True/False
+        """
+        if not self.root:
+            raise Exception("Empty Tree !!!")
+
+        else:
+            temp = self.root
+            while temp:
+                if temp.data == value:
+                    return True
+                elif temp.data > value:
+                    if not temp.left:
+                        return False
+                    temp = temp.left
+                else:
+                    if not temp.right:
+                        return False
+                    temp = temp.right
+
+         
+        
+
+
+
+
+if __name__=="__main__":       #            A
+    bt=BinaryTree()            #       B           C
+    a=Node('A')                #     D    E     F           
+    b=Node('B')
+    c=Node('C')
+    d=Node('D')
+    e=Node('E')
+    f=Node('F')
+    bt.root=a
+    a.left=b
+    a.right=c
+    b.left=d
+    b.right=e
+    c.left=f
+    print(bt.pre_order())  #A,B,D,E,C,F
+    print(bt.in_order())  #D,B,E,A,F,C
+    print(bt.post_order())  #D,E,B,F,C,A
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
