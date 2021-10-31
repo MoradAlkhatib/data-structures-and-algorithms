@@ -32,3 +32,21 @@ print the tree in the array with use depth way as a post order.
 tack a value  and adds it to new node with that value in the correct location in the binary search tree.
 #### Contains method:
 tack a value  and check if it found inside a tree
+
+
+## Maximum Value in a Binary Tree
+Challenge
+Write the following method for the Binary Tree class.
+
+Find maximum value:
+
+Arguments: none.
+Returns: number.
+Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+Approach & Efficiency
+Big (O):
+Time --> O(n)
+Space --> O(1)
+
+## Whiteboard 
+![](maxTree.png)
