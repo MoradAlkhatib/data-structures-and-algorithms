@@ -61,6 +61,7 @@ class LinkedList:
     while last.next:
       last = last.next
     last.next = new_node
+    return new_node
 
 
 
@@ -119,6 +120,21 @@ class LinkedList:
         return current.value      
       count+=1 
       current=current.next
+
+
+  def delete( self , node ):
+    """
+    function that tack node as an argument then delete it from linked list and return None 
+    """
+    # node=Node(node)
+    # save_next_next = node.next.next
+    # print(save_next_next)
+    # data=node.value
+    # node.value = data
+    # node.next = save_next_next
+    node.value = node.next.value
+    node.next = node.next.next
+
  
 
 def zipLists(list1,list2):
@@ -163,7 +179,7 @@ def is_palindrome(lenked_list):
     new_linked.append(current.value)
     if current.next == None:
       break
-    current=current.next
+    current = current.next
   
   revers(new_linked)
   
@@ -181,11 +197,13 @@ def main():
   link=LinkedList()
   link.append('a')
   link.append('b')
-  link.append('c')
-  link.append('c')
-  link.append('b')
-  link.append('a')
-
+  app=link.append('c')
+  link.append('d')
+  link.append('e')
+  link.append('f')
+  print(link.to_string())
+  link.delete(app)
+  print(link.to_string())
   print(is_palindrome(link))
 
 
