@@ -21,23 +21,23 @@ BigO(n) worst case
 
 ## API
 Stack
-push
+push bigO(1) for space bigO(1) for time
 tack an item and add it to the stack
-pop
+pop bigO(1) for space bigO(1) for time
 Removes the node from the top of the stack and if it empty return "Stack is empty"
-peek
+peek bigO(1) for space bigO(1) for time
 Returns: Value of the node located at the top of the stack or return "Stack is empty"
-is empty
+is empty bigO(1) for space bigO(1) for time
 Returns: Boolean indicating whether or not the stack is empty.
 
 
 Queue
-enqueue
+enqueue bigO(1) for space bigO(1) for time
 tack an item and add it to the queue
-dequeue
+dequeue bigO(1) for space bigO(1) for time
 Removes the node from the front of the queue and if it empty return "Queue is empty"
-peek
+peek bigO(1) for space bigO(1) for time
 Arguments: none
 Returns: Value of the node located at the front of the queue or return "Queue is empty"
-is empty
+is empty bigO(1) for space bigO(1) for time
 Returns: Boolean indicating whether or not the queue is empty.
