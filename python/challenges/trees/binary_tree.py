@@ -57,6 +57,16 @@ class BinaryTree:
         rec(self.root)
 
         return arr
+    
+    # def max_item(self):
+    #     l=self.pre_order()
+    #     max_val=0
+    #     for i in l :
+    #        if int(i) > max_val :
+    #            max_val = int(i)
+    #     return max_val
+
+
 
 
 
@@ -148,68 +158,35 @@ class BinarySearch(BinaryTree):
                         return False
                     temp = temp.right
 
-    def maximum_value ( self ) :
-        
-        
-        
-        self.max_val = 0
-        def rec ( item ) :
-
-            if self.max_val < item :
-                self.max_val = item.value
-
-            if item.left > self.max_val :
-                self.max_val = item.left
-                rec( item.left )
-
-            else:
-                self.max_val = item.right
-                rec( item.right )
-
-        rec(self.root)
-        return self.max_val
 
 
-
-def main():
-    b=BinarySearch()
-    b.add(2)
-    b.add(5)
-    b.add(9)
-    b.add(10)
-    b.add(20)
-    b.add(8)
-    b.add(7)
-    print(b.maximum_value())
+    def find_maximum_value(self):
+        """
+        function have no argument and return max value if the tree not empty other wise return 0 
+        """
+        if self.root == None:
+          return 0
+        maximum_value = self.root.value
+        def maximum_value_fun(root):
+          nonlocal maximum_value
+          if root.value > maximum_value:
+              maximum_value = root.value
+          if root.left:
+              maximum_value_fun(root.left)
+          if root.right:
+              maximum_value_fun(root.right)
+          return maximum_value
+        return maximum_value_fun(self.root)
     
-         
-if __name__ == "__main__":main()       
+  
+        
+  
 
 
 
 
 
 
-
-
-
-# if __name__=="__main__":       #            A
-#     bt=BinaryTree()            #       B           C
-#     a=Node('A')                #     D    E     F           
-#     b=Node('B')
-#     c=Node('C')
-#     d=Node('D')
-#     e=Node('E')
-#     f=Node('F')
-#     bt.root=a
-#     a.left=b
-#     a.right=c
-#     b.left=d
-#     b.right=e
-#     c.left=f
-#     print(bt.pre_order())  #A,B,D,E,C,F
-#     print(bt.in_order())  #D,B,E,A,F,C
-#     print(bt.post_order())  #D,E,B,F,C,A
 
 
 
