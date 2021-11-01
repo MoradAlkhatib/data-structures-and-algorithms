@@ -58,13 +58,23 @@ class BinaryTree:
 
         return arr
     
-    # def max_item(self):
-    #     l=self.pre_order()
-    #     max_val=0
-    #     for i in l :
-    #        if int(i) > max_val :
-    #            max_val = int(i)
-    #     return max_val
+    def find_maximum_value(self):
+        """
+        function have no argument and return max value if the tree not empty other wise return 0 
+        """
+        if self.root == None:
+          return 0
+        maximum_value = self.root.value
+        def maximum_value_fun(root):
+          nonlocal maximum_value
+          if root.value > maximum_value:
+              maximum_value = root.value
+          if root.left:
+              maximum_value_fun(root.left)
+          if root.right:
+              maximum_value_fun(root.right)
+          return maximum_value
+        return maximum_value_fun(self.root)
 
 
 
@@ -160,23 +170,7 @@ class BinarySearch(BinaryTree):
 
 
 
-    def find_maximum_value(self):
-        """
-        function have no argument and return max value if the tree not empty other wise return 0 
-        """
-        if self.root == None:
-          return 0
-        maximum_value = self.root.value
-        def maximum_value_fun(root):
-          nonlocal maximum_value
-          if root.value > maximum_value:
-              maximum_value = root.value
-          if root.left:
-              maximum_value_fun(root.left)
-          if root.right:
-              maximum_value_fun(root.right)
-          return maximum_value
-        return maximum_value_fun(self.root)
+    
     
   
         
