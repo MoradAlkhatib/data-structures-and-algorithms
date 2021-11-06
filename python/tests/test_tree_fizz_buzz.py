@@ -1,25 +1,46 @@
-from challenges.trees.binary_tree import BinarySearch 
-from challenges.tree_fizz_buzz.tree_fizz_buzz import FizzBuzzTree 
+from challenges.tree_fizz_buzz.tree_fizz_buzz import *
+import pytest
 
-
-    
 
 def  test_fizz_buzz():
-    tree = BinarySearch()
-    tree.add(2)
-    tree.add(7)
-    tree.add(5)
-    tree.add(9)
-    tree.add(15)
-    tree.add(70)
-    tree.add(33)
-    tree.add(30)
+    tree = Binary_search_tree()
+    a_node = Node(3)             #        3       
+    b_node = Node(6)             #  6     4    15
+    c_node = Node(9)             #  9
+    d_node = Node(4)              # 5
+    e_node = Node(5)
+    f_node = Node(15)
 
-    print(tree.pre_order())
-    # [2, 7, 5, 9, 15, 70, 33, 30]
-    expected = ['2','7','Buzz','Fizz','FizzBuzz','Buzz','Fizz','FizzBuzz']
-    actual = FizzBuzzTree(tree)
-    assert expected == actual
+
+    a_node.child.append(b_node)
+    a_node.child.append(d_node)
+    b_node.child.append(c_node)
+    c_node.child.append(e_node)
+    a_node.child.append(f_node)
+    tree.root = a_node
+    expected=['Fizz', 'Fizz', '4', 'FizzBuzz', 'Fizz', 'Buzz']
+    actul=fizz_buzz(tree).bfs()
+    assert actul==expected
+
+
+def  test_fizz_buzz2():
+    tree = Binary_search_tree()
+    a_node = Node(3)             #        3       
+    b_node = Node(6)             #  6     4    15
+    c_node = Node('9')             #  9
+    d_node = Node(4)              # 5
+    e_node = Node(5)
+    f_node = Node(15)
+
+
+    a_node.child.append(b_node)
+    a_node.child.append(d_node)
+    b_node.child.append(c_node)
+    c_node.child.append(e_node)
+    a_node.child.append(f_node)
+    tree.root = a_node
+    with pytest.raises(TypeError):
+        fizz_buzz(tree)
     
    
     

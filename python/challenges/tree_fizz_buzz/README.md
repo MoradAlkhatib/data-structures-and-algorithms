@@ -18,4 +18,4 @@ Space --> O(n)
 Approach & Methodology:
 
 ## Whiteboard
-![](tree_fiz_buzz.jpg)
+![](fizz_buzz_tree.jpg)
