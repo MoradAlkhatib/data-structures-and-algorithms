@@ -13,4 +13,4 @@ Space: O(1)
 This list is being sorted in place, keeping the space at constant O(1).
 
 ## Solution
-sort array my use marge algorithm
+sort array my use marge algorithm.
