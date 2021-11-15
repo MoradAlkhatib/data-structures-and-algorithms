@@ -8,7 +8,7 @@ def mergesort(arr):
         mergesort(right)
         return Merge( arr ,left, right)
 
-def Merge(left, right, arr):
+def Merge(arr ,left, right ):
     i = 0
     j = 0
     k = 0
@@ -24,12 +24,16 @@ def Merge(left, right, arr):
         k += 1
 
     while i < len(left):
-            arr[k] = left[i]
-            i += 1
-            k += 1
+        arr[k] = left[i]
+        i += 1
+        k += 1
 
     while j < len(right):
-            arr[k] = right[j]
-            j += 1
-            k += 1
+        arr[k] = right[j]
+        j += 1
+        k += 1
     return arr
+
+
+if __name__=='__main__':
+    print(mergesort([2,5,4,8,9,10]))
