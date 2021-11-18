@@ -6,7 +6,7 @@ Present a complete set of working tests.
 
 ## White Board
 ![quick_sort](quick_sort.png)
-![quick_sort_tracker](quick_sort_tracker.png)
+
 
 
 
