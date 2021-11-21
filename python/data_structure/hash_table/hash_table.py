@@ -62,15 +62,16 @@ class HashTable:
             any: the value stored corresponding to the key provided.
         """
         index = self.__hash(key)
-        value = self.__buckets[index]
-        if value:
-            if isinstance(value, LinkedList):
-                current = value.head
-                while current:
-                    if current.value[0] == key:
-                        return current.value[1]
-                    current = current._next
-            return value
+        if self.__buckets[index]:
+       
+            linked_list = self.__buckets[index]
+            current = linked_list.head
+            while current:
+      
+                if current.value[0] == key: 
+                    return current.value[1]
+                current = current.next
+        
         return None
     
     def contains(self, key):
@@ -82,13 +83,11 @@ class HashTable:
             bool: True if the key exists in the hashtable, and False otherwise.
         """
         index = self.__hash(key)
-        value = self.__buckets[index]
-        if value:
-            if isinstance(value, LinkedList):
-                current = value.head
-                while current:
-                    if current.value[0] == key:
-                        return True
-                    current = current._next
-            return True
-        return False
+
+        return True if self.__buckets[index] else False
+
+
+      
+      
+
+      
