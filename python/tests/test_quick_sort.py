@@ -1,6 +1,3 @@
-
-
-
 from challenges.quick_sort.quick_sort import quick_sort
 def test_reverse_sorted():
     arr = [20,18,12,8,5,-2,-3]
